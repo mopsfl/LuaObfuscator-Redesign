@@ -154,19 +154,25 @@ h1 {
     color: white;
     transition-duration: 0.2s;
     cursor: pointer;
-    padding: 0 4px;
-    margin-top: 4px;
     margin-bottom: 4px;
     text-transform: uppercase;
     background-color: rgb(27, 27, 27);
-    border: solid 1px rgb(41, 41, 41);
     font-size: 15px;
-    padding: 3px 5px;
+    padding: 5px 5px;
+    user-select: none;
+}
+
+.toolbox-button:not(:first-child) {
+    margin-top: 4px;
 }
 
 .toolbox-button:hover {
     transition-duration: 0.2s;
     background-color: rgb(41, 41, 41);
+}
+
+.toolbox-collapsible.first {
+    margin-top: 5px;
 }
 
 .notepad-script {
@@ -558,6 +564,22 @@ pre>span {
     align-items: center;
     justify-content: center;
     align-self: center;
+    border-radius: 3px;
+    transition: background-color .3s;
+}
+
+.toolbox-collapsible:not(:last-child) {
+    margin-bottom: 3px;
+}
+
+.toolbox-collapsible-content {
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+.toolbox-collapsible-text {
+    user-select: none;
+    pointer-events: none;
 }
 
 .toolbox-collapsible>.toolbox-collapsible-text {
@@ -572,6 +594,8 @@ pre>span {
     color: rgb(255, 255, 255);
     margin-left: auto;
     margin-right: 10px;
+    user-select: none;
+    transition: transform .3s;
 }
 
 .toolbox-hit {
@@ -986,6 +1010,7 @@ body {
     font-weight: bold;
     text-decoration: underline;
     text-transform: uppercase;
+    user-select: none;
 }
 
 #notepad-toolbox1 {
@@ -1063,6 +1088,7 @@ body {
     }
     .toolbox-stats {
         margin-top: 0px;
+        user-select: none;
     }
     .toolbox-collapsible {
         font-size: 20px;
