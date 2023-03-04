@@ -1,4 +1,4 @@
-﻿// #==================================#
+// #==================================#
 // #      toolbox-collapsible         #
 // #==================================#
 
@@ -9,18 +9,19 @@ for (i = 0; i < coll.length; i++) {
     coll[i].addEventListener("click", function(e) {
         this.classList.toggle("toolbox-hit");
         var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-            e.target.querySelector(".material-symbols-outlined").innerHTML = "arrow_right"
+        let symbol = e.target.querySelector(".material-symbols-outlined")
+        let totaldownloads = e.target.querySelector(".totaldownloads")
+        if (content.style.maxHeight === "1000px") {
+            content.style.transition = "max-height .3s"
+            content.style.maxHeight = "0px";
+            if (symbol) symbol.style = "transform: rotate(0deg);"
+            if (totaldownloads) content.style.maxHeight = "0px";
         } else {
-            content.style.display = "block";
-            e.target.querySelector(".material-symbols-outlined").innerHTML = "arrow_drop_down"
+            content.style.transition = "max-height 1s"
+            content.style.maxHeight = "1000px";
+            if (symbol) symbol.style = "transform: rotate(90deg);"
+            if (totaldownloads) content.style.maxHeight = "1000px";
         }
-        /*if (content.style.height === "auto") {
-            content.style.height = "0";
-        } else {
-            content.style.height = "auto";
-        }*/
     });
 }
 
