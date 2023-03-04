@@ -1,2 +1,2 @@
 # LuaObfuscator-Redesign
-A redesign of luaobfuscator.com
+A redesign of https://luaobfuscator.com
