@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>LuaObfuscator - Playground</title>
+    <style>
+        html {
+            /* Only here so we don't get a bright white flash while page loads! */
+            background-color: #1e1e1e;
+            color: white;
+        }
+    </style>
+    <script src="ripple.js" defer type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="code-lua.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore a collection of Lua obfuscation and deobfuscation techniques from the comfort of the cloud. Featuring a beautifier, minification, string encryption, control flow obfuscation and virtualization.">
+    <meta name="keywords" content="Online Lua Obfuscation, Lua Beautifier, Lua Minifier, Lua Obfuscator, Lua deobfuscator, obfuscator, lua, deobfuscation, roblox obfuscator, roblox protection, packer, crypter, lua emulator">
+    <meta property="og:title" content="Online Lua Obfuscator">
+    <meta property="og:image" content="https://luaobfuscator.com/img/logo.png">
+    <meta property="og:description" content="Explore a collection of Lua obfuscation and deobfuscation techniques from the comfort of the cloud. Featuring a beautifier, minification, string encryption, control flow obfuscation and virtualization.">
+    <meta property="og:url" content="https://luaobfuscator.com">
+</head>
+
+<body>
+    <div class="main-container" style="height: 100% !important">
+        <div class="notepad-body" style="heigth: 100%">
+            <div class="notepad-test">
+                <div class="notepad-top">
+                    <ul id="lua-sessions">
+                        <li class="top-tab"><a href="." style="color: whtie; text-decoration: none; cursor: default;">Home</a><span class="top-tab-close"></span></li>
+                    </ul>
+                    <ul id="lua-top-mobile">
+                        <li style="    
+                        display: block;
+                        height: 100%;
+                        padding: 5px;">
+                            <div style="
+                           position: absolute;
+                           display: block;
+                           width: 32px;
+                           height: 32px;
+                           background-color: #252525;
+                           border-radius: 12px;
+                           padding: 2px;">
+                                <a href="https://luaobfuscator.com/" style="position: absolute;">
+                                    <img style="width: 32px; height: 32px; display: inline-block; filter: drop-shadow(1px 1px 3px black);" alt="LuaObfuscator logo" src="https://luaobfuscator.com/img/logo.png" width="600" height="600">
+                                </a>
+                            </div>
+                            <span style="color: wheat; margin-left: 42px; margin-top: 5px; position: absolute;"> - LuaObfuscator</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="notepad-script">
+                    <div id="toolbox-download-btn" class="big-pink-btn ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Download</div>
+                    <div class="notepad-lines">
+                        <ul id="notepad-lines-ul"></ul>
+                    </div>
+                    <pre class="lasm-script"><code id="lua-codewindow" class="lang-lua" spellcheck="false" style="filter: blur(0px);" contenteditable="false"><article id="home-landingpage" class="content-landing" style="display: flex;"><div class="home-page-content" style="background: #131313; border-radius: 0% 0% 50% 50% / 10%"><a class="home-ribbon" href="https://github.com/sponsors/ferib">Donate on GitHub</a><div class="home-page-container"><div class="home-page-row"><div class="home-info"><h1>Protect your Lua Scripts Today!</h1><p>You are 2 clicks away from obfuscating your Lua Script! Use the action buttons on the right to select from a wide range of obfuscation features after clicking Upload File or Demo.</p><div class="button-box"><div id="btn-uploadfile" class="big-pink-btn ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Upload File</div><div id="btn-demo" class="big-pink-btn-light ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Demo</div></div></div></div></div></div><div class="home-page-content" style="padding-bottom: 0"><div class="home-page-container"><div class="home-page-row"><div class="home-info"><h2>Join the community!</h2><p>Issues? Bugs? or just want to say hello? Come join our freshly created community section and share your feedback. We are looking forward to hear from you!</p><div class="button-box" style="justify-content: flex-start;"><a href="https://discord.gg/fCWTSMhM9q"><div class="big-pink-btn ripple" style="margin-right: 10px;" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Discord</div></a><a href="https://luaobfuscator.com/forum/post/4/Issues-Bugs-or-just-want-to-say-hello"><div class="big-pink-btn-light ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Visit Community</div></a></div></div></div></div></div></article><footer class="home-footer"><div style="padding: 12px; opacity: 0.2"><span>© 2022-2023 LuaObfuscator</span></div></footer></code></pre>
+                    <input type="file" id="lua-file" style="display:none">
+                </div>
+            </div>
+            <div id="notepad-toolbox1" class="notepad-toolbox">
+                <a style="text-decoration: none;" href="https://luaobfuscator.com/forum">
+                    <div class="toolbox-collapsible collapsible-header">Community</div>
+                </a>
+                <div style="display: none; height: auto; width: 100%;">
+                </div>
+                <div class="toolbox-collapsible"><span class="toolbox-collapsible-text">All Actions</span><span class="material-symbols-outlined">arrow_right</span></i>
+                </div>
+                <div style="display: none; height: auto; width: 100%;">
+                    <span id="lua-cleanup" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">CLEANUP</span>
+                    <span id="lua-junkif" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Junk-If</span>
+                    <span id="lua-reverseif" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Reverse-If</span>
+                    <span id="lua-cffv1" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">CFF v1*</span>
+                    <span id="lua-literals" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Literals</span>
+                    <span id="lua-mbav1" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">MBAv1</span>
+                    <span id="lua-strings" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Strings</span>
+                    <span id="lua-tableindirection" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Table Indirection</span>
+                    <span id="lua-minify" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Minify*</span>
+                    <span id="lua-beautify" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Beautify</span>
+                    <span id="lua-demo_vm" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Demo VM*</span>
+                    <span id="lua-reset" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">RESET&nbsp;</span>
+                    <p style="color: indianred; bottom:0px" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">*Experimental</p>
+                </div>
+                <div class="toolbox-collapsible toolbox-hit" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)"><span class="toolbox-collapsible-text">Obfuscation</span> <span class="material-symbols-outlined">arrow_right</span></div>
+                <div style="display: block; height: auto; width: 100%;" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">
+                    <span id="lua-pre-1" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Chaotic Evil</span>
+                    <span id="lua-pre-2" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Chaotic Good</span>
+                    <span id="lua-pre-5" class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Obfuscate</span>
+                    <span id="lua-pre-3 " class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Basic Good</span>
+                    <span id="lua-pre-4 " class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Basic Minimal </span>
+                    <span id="lua-beautify3 " class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Beautify</span>
+                </div>
+                <div class="toolbox-collapsible "><span class="toolbox-collapsible-text">Miscellaneous</span> <span class="material-symbols-outlined">arrow_right</span></div>
+                <div style="display: none; height: auto; width: 100%; ">
+                    <span id="lua-beautify2 " class="toolbox-button ripple " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Beautify</span>
+                    <span id="lua-minify2 " class="toolbox-button ripple " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Minify</span>
+                    <span id="lua-undo " class="toolbox-button ripple " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Undo</span>
+                    <span id="lua-undoAll " class="toolbox-button ripple " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Undo ALL</span>
+                    <span id="lua-reset2 " class="toolbox-button ripple" ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">RESET&nbsp;</span>
+                </div>
+                <div class="toolbox-collapsible"><span class="toolbox-collapsible-text">De-obfuscation</span> <span class="material-symbols-outlined">arrow_right</span></div>
+                <div style="display: none; height: auto; width: 100%; ">
+                    <span id="lua-cleanup3 " class="toolbox-button ripple ">CLEANUP</span>
+                </div>
+                <div class="toolbox-collapsible" style="color: #ff6969!important"><span class="toolbox-collapsible-text">Experimental</span> <span class="material-symbols-outlined">arrow_right</span></div>
+                <div style="display: none; height: auto; width: 100%; " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">
+                    <span id="lua-variables " class="toolbox-button ripple " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Locals**</span>
+                    <span id="lua-cffv1-exp " class="toolbox-button ripple " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">CFF v1*</span>
+                    <span id="lua-ssa " class="toolbox-button ripple " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">SSA-ish</span>
+                    <span id="lua-demo_vm-exp " class="toolbox-button ripple " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">Demo VM*</span>
+                    <p style="color: indianred; bottom:0px " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">*Might break</p>
+                    <p style="color: indianred; bottom:0px " ripple-opacity="0.1" ripple-release-expand-time="1" ripple-color="rgb(255,255,255)">**Will break</p>
+                </div>
+                <div class="toolbox-collapsible toolbox-stats ">
+                    <span style="font-size: 26px; line-height: 30px; ">
+                     <svg width="30px " height="30px " viewBox="-9.66 0 103.8 103.8 " xmlns="http://www.w3.org/2000/svg ">
+                        <g id="Group_2 " data-name="Group 2 " transform="translate(-472 -231.9) ">
+                           <path id="Path_47 " data-name="Path 47 " d="M522.1,246.8H499.3c-11.6,0-21.1,7.6-21.1,15.2 " fill="none " stroke="#90ee90 " stroke-linecap="round " stroke-miterlimit="10 " stroke-width="4 "></path>
+                           <line id="Line_22 " data-name="Line 22 " y1="22.7 " transform="translate(551 255.1) " fill="none " stroke="#90ee90 " stroke-linecap="round " stroke-miterlimit="10 " stroke-width="4 "></line>
+                           <path id="Path_48 " data-name="Path 48 " d="M532.6,233.9H509.8c-11.6,0-21.1,6.7-21.1,15 " fill="none " stroke="#90ee90 " stroke-linecap="round " stroke-miterlimit="10 " stroke-width="4 "></path>
+                           <path id="Path_49 " data-name="Path 49 " d="M534.7,256.7H490.3A16.3,16.3,0,0,0,474,273v44.4a16.3,16.3,0,0,0,16.3,16.3h44.4A16.3,16.3,0,0,0,551,317.4V273A16.3,16.3,0,0,0,534.7,256.7Z " fill="none " stroke="#90ee90
+                        " stroke-linecap="round " stroke-miterlimit="10 " stroke-width="4 "></path>
+                           <path id="Path_50 " data-name="Path 50 " d="M540.7,242.3a3.567,3.567,0,0,1,4.2,4.2,3.518,3.518,0,0,1-2.8,2.8,3.567,3.567,0,0,1-4.2-4.2A3.518,3.518,0,0,1,540.7,242.3Z " fill="#90ee90 " stroke="#90ee90 " stroke-linecap="round
+                        " stroke-linejoin="round " stroke-miterlimit="10 " stroke-width="2 "></path>
+                           <path id="Path_51 " data-name="Path 51 " d="M551.2,233.5a3.567,3.567,0,0,1,4.2,4.2,3.518,3.518,0,0,1-2.8,2.8,3.567,3.567,0,0,1-4.2-4.2A3.651,3.651,0,0,1,551.2,233.5Z " fill="#90ee90 " stroke="#90ee90 " stroke-linecap="round
+                        " stroke-linejoin="round " stroke-miterlimit="10 " stroke-width="2 "></path>
+                           <line id="Line_23 " data-name="Line 23 " x2="23.1 " transform="translate(491.1 278.8) " fill="none " stroke="#90ee90 " stroke-linecap="round " stroke-miterlimit="10 " stroke-width="4 "></line>
+                           <line id="Line_24 " data-name="Line 24 " x2="36.1 " transform="translate(491.1 295.2) " fill="none " stroke="#90ee90 " stroke-linecap="round " stroke-miterlimit="10 " stroke-width="4 "></line>
+                        </g>
+                     </svg>
+                     104552
+                  </span>
+                </div>
+                <div style="display: none; height: auto; width: 100%; ">
+                    <span style="color: lightgreen; font-style: italic; ">Total Downloads: 104552</span><br>
+                    <span style="color: lightgreen; font-style: italic; ">Total Obfuscations: 256580</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script defer="defer " src="luaEngine.js "></script>
+    <script defer="defer " src="index.js "></script>
+    <script>
+        var maincontainer = document.getElementsByClassName('main-container')[0];
+        var notepadbody = document.getElementsByClassName('notepad-body')[0];
+        const observer = new MutationObserver(function(mutations, observer) {
+            maincontainer.style.height = "100% ";
+            if (notepadbody != null)
+                notepadbody.style.height = "100% ";
+        });
+        observer.observe(maincontainer, {
+            attributes: true,
+            attributeFilter: ['style']
+        });
+    </script>
+    <script src="app.js " type="text/javascript "></script>
+</body>
+
+</html>

@@ -1,0 +1,1146 @@
+/* TODO: fix this stupid CDN bug */
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: ghostwhite;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+div {
+    display: block;
+    margin: auto;
+}
+
+a {
+    color: rgb(46, 162, 235);
+}
+
+h1 {
+    font-size: 28px;
+}
+
+
+/* main div components */
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #131313;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.notepad-header {
+    min-height: 30px;
+    height: 5%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    background-color: rgb(243, 139, 118);
+}
+
+.notepad-body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.notepad-footer {
+    width: 100%;
+    height: 20%;
+    margin: auto;
+    position: relative;
+    background-color: #3E3E42;
+}
+
+.notepad-console {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    background-color: #252525;
+}
+
+.notepad-lines {
+    /* height: 100%; */
+    display: inline-block;
+    /* min-width: 31px; */
+    background-color: #1E1E1E;
+    color: #80c0ff;
+    /* margin-right: 12px;
+	border-right: 1px solid; */
+    cursor: default;
+    /* pointer for when Line numbers work?; */
+    margin-top: 0;
+}
+
+.lasm-line {
+    width: 100%;
+    height: 18;
+    margin: 0;
+    padding: 2px 0 2px 0;
+}
+
+.lasm-opcode {
+    color: #a0a0e0;
+}
+
+.lasm-operands {
+    color: #a0a0e0;
+}
+
+.lasm-note {
+    /* color: #a0a0e0; */
+    color: #8686b5;
+}
+
+.lasm-func {
+    text-decoration: underline !important;
+    color: #80c0ff;
+}
+
+.lasm-script {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    /* overflow: hidden; */
+    /* background-color: #bec100; */
+}
+
+#lua-codewindow>* {
+    font-family: monospace;
+}
+
+.lang-lua {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    /*overflow-x: auto;*/
+    /*line-height: 24px;*/
+    transition-duration: 0.5s;
+    /*white-space: pre-wrap;  test!! */
+    cursor: text;
+}
+
+
+/* ==== Toolbox Buttons ====*/
+
+.toolbox-button {
+    display: block;
+    border-radius: 3px;
+    color: white;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    padding: 0 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    background-color: rgb(27, 27, 27);
+    border: solid 1px rgb(41, 41, 41);
+    font-size: 15px;
+    padding: 3px 5px;
+}
+
+.toolbox-button:hover {
+    transition-duration: 0.2s;
+    background-color: rgb(41, 41, 41);
+}
+
+.notepad-script {
+    height: 100%;
+    display: flex;
+    width: 100%;
+    min-width: 21px;
+    background-color: #131313;
+    color: ghostwhite;
+    overflow: auto;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: stretch;
+    box-shadow: inset -2px -2px 6px 0px rgba(0, 0, 0, 0.664);
+}
+
+.notepad-lasm {
+    height: 100%;
+    width: 45%;
+    display: inline-block;
+    min-width: 21px;
+    background-color: #252525;
+    overflow: auto;
+}
+
+
+/* Small elements */
+
+.notepad-lines>ul {
+    text-align: right;
+    font-size: 16px;
+    line-height: 18px;
+    list-style: none;
+    padding: 0 5px 0 7px;
+    margin: 0;
+    color: dimgray;
+    border: 1px solid black;
+    border-radius: 1px 0 0 0 0;
+    border-width: 0 1px 0 0;
+    margin-right: 8px;
+    height: 100%;
+}
+
+.console-output {
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+    position: relative;
+}
+
+.console-input {
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    padding: 0;
+    height: 22px;
+    bottom: 0;
+    margin: auto;
+    background-color: #3E3E42;
+    color: ghostwhite;
+    position: relative;
+}
+
+.console-footer {
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    padding: 0;
+    height: 20px;
+    bottom: 0;
+    margin: auto;
+    background-color: #3E3E42;
+    color: ghostwhite;
+    position: relative;
+}
+
+#code-tooltip {
+    position: fixed;
+    background-color: blueviolet;
+    /* #111111; */
+    border-radius: 4px;
+    width: 120px;
+    height: 30px;
+    z-index: 1;
+    text-align: center;
+    transition-duration: 0.2s;
+    opacity: 20%;
+}
+
+#code-tooltip:hover {
+    transition-duration: 0.2s;
+    opacity: 100%;
+}
+
+#code-tooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: -3px;
+    transform: rotate(45deg);
+    left: 50%;
+    margin-left: -3px;
+    border: solid blueviolet 3px;
+}
+
+
+/* inspector */
+
+.inspector {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    padding-left: 2px;
+}
+
+.inspector>li>span>ul {
+    padding-left: 9px;
+    list-style: none;
+}
+
+.inspector>li {
+    border-top: 1px black solid;
+}
+
+.inspector>.ins-item:hover {
+    background-color: #ffffff10;
+}
+
+
+/*
+        .inspector > .ins-list:hover{
+            background-color: #303840;
+        }*/
+
+.inspector-main {
+    border-bottom: 1px solid black;
+}
+
+.ins-list>a,
+.ins-item>span>a {
+    color: #ff9e59;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    /* width: 100%; */
+}
+
+.ins-list>a:hover {
+    color: #cc7832;
+    background-color: #ffffff10;
+}
+
+.ins-item>span {
+    width: 50%;
+    text-align: left;
+    padding-right: 10px;
+    float: right;
+}
+
+.hide {
+    display: none;
+}
+
+li.block-if {
+    background-color: #FFCC002F;
+}
+
+li.block-else {
+    background-color: #0094FF2F;
+}
+
+li.block-endif {
+    background-color: #8002842F;
+}
+
+li.block-end {
+    background-color: #8416052F;
+}
+
+
+/* highlight text */
+
+li.block-if:hover~.sblock-if {
+    background-color: #bec1001f;
+    outline: 1px solid #9e9e9e;
+}
+
+.sblock-if:hover {
+    background-color: #bec1001f;
+    outline: 1px solid #9e9e9e;
+}
+
+.sblock-else:hover {
+    background-color: #0094FF1f;
+    outline: 1px solid #9e9e9e;
+}
+
+.sblock-endif:hover {
+    background-color: #8002841F;
+    outline: 1px solid #9e9e9e;
+}
+
+.sblock-end:hover {
+    background-color: #8416051F;
+    outline: 1px solid #9e9e9e;
+}
+
+.glow {
+    background-color: #ffffff10;
+    outline: 1px solid #9e9e9e;
+}
+
+.sline-default {
+    white-space: pre-wrap;
+}
+
+pre>span {
+    white-space: pre-wrap;
+}
+
+.splashscreen {
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rebeccapurple
+}
+
+.splash-menu {
+    text-align: center;
+    height: 320px
+}
+
+.splash-dragdrop {
+    width: 320px;
+    height: 200px;
+    border: 1px #ffffff3f dashed;
+    border-radius: 17px;
+    margin-top: 310px;
+}
+
+.code_box {
+    background: #272822;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    color: #f8f8f2;
+    padding: 6px;
+}
+
+[class^="c_ref-"]:hover {
+    background-color: #ae81ff30!important;
+}
+
+[class^="c_ref-"] {
+    /*color: #0ced9a!important;
+	filter: saturate(1);*/
+}
+
+.c_green {
+    color: #008000;
+}
+
+.c_pink {
+    color: #f92672;
+}
+
+.c_yellow {
+    color: #e6db74;
+}
+
+.c_blue {
+    color: #66d9ef;
+}
+
+.c_white {
+    color: #f8f8f2;
+}
+
+.c_purple {
+    color: #ae81ff;
+}
+
+.c_brown {
+    color: #a31515;
+}
+
+.test_container {
+    background-color: transparent;
+    background-size: 1px 800px;
+    background-position: 0 0, 0 0;
+}
+
+.test-inlined-ad {
+    display: inlined-block;
+    width: 468px;
+    float: left;
+    background-color: aliceblue;
+}
+
+
+/* Slider */
+
+::-webkit-scrollbar {
+    width: 6px;
+    cursor: pointer;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    /*#1E1E1E;*/
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #282828;
+    /* #2e2e2e;*/
+    border-radius: 6px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* decoration */
+
+.top-tab {
+    display: inline-block;
+    width: 160px;
+    height: 100%;
+    line-height: 32px;
+    margin-left: 5px;
+    padding-right: 8px;
+    padding-left: 10px;
+    background-color: #131313;
+    color: lightblue;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    border: solid 1px rgb(41, 41, 41);
+}
+
+.top-tab>a {
+    width: 100%;
+    display: block;
+    cursor: pointer!important;
+}
+
+.top-crumb {
+    display: inline-block;
+    height: 100%;
+    line-height: 25px;
+    margin-left: 5px;
+    padding-right: 8px;
+    padding-left: 10px;
+    border: 1px solid #101010;
+    background-color: #2e2e2e;
+    color: lightblue;
+    border-radius: 10px 5px 10px 5px;
+}
+
+.top-tab-close {
+    float: right;
+    color: indianred;
+    cursor: pointer;
+}
+
+.toolbox-collapsible {
+    background-color: rgb(27, 27, 27);
+    color: lightblue;
+    cursor: pointer;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.toolbox-collapsible>.toolbox-collapsible-text {
+    margin-left: 10px;
+}
+
+.toolbox-collapsible:hover {
+    background-color: #303030;
+}
+
+.toolbox-collapsible>.material-symbols-outlined {
+    color: rgb(255, 255, 255);
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.toolbox-hit {
+    background-color: #232323;
+}
+
+
+/* Forum-like design css */
+
+.content-box-middle {
+    padding-right: 5px;
+    flex-grow: 1 !important;
+    border-right: 2px dashed #1e1e1e;
+    margin: 0;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.content-box {
+    width: auto;
+    height: auto;
+    min-height: 200px;
+    margin-bottom: 10px;
+    background-color: #181818/*indianred*/
+    ;
+    border-radius: 3px;
+    display: flex;
+    position: relative;
+    padding: 5px;
+}
+
+.content-box-interactable {
+    transition-duration: 0.3s;
+}
+
+.content-box-interactable:hover {
+    box-shadow: #87ceeb30 0 0 10px 0px;
+}
+
+.content-box-md {
+    padding: 15px 0 15px 0;
+}
+
+.content-box-left,
+.content-box-left-2 {
+    float: left;
+    width: 90px;
+    text-align: center;
+    display: block;
+}
+
+.content-box-right {
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 5px 0 5px 20px;
+}
+
+.box-avatar {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    background-color: darkorange;
+}
+
+.box-avatar-name {
+    height: 100%;
+    display: block;
+    width: 100%;
+    font-size: 32px;
+    line-height: 50px;
+    font-weight: bold;
+    color: #252525;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    text-align: center;
+}
+
+[id^=reply-] {
+    padding-left: 90px;
+}
+
+[id^=reply-]>p {
+    /* force user to break all */
+    word-break: break-all;
+}
+
+.topic-box {
+    min-height: 200px;
+    margin: 0;
+    padding: 12px;
+    display: block;
+}
+
+.post-title {
+    overflow: hidden;
+    margin: 15px 0 12px 0;
+    color: lightblue;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.post-title-interactable {}
+
+.post-title-interactable:hover {
+    text-decoration: underline;
+}
+
+.label {
+    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    color: #1e1e1e;
+    font-weight: bold;
+    background-color: hotpink;
+    border-radius: 0.25em;
+    text-align: center;
+}
+
+.title-small {
+    font-size: 14px;
+    color: lightblue;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.title-medium {
+    color: lightgreen;
+    overflow: hidden;
+    font-size: 18px;
+    margin: 15px 0 12px 0;
+}
+
+.small-box,
+.small-box-2 {
+    overflow: hidden;
+    padding-bottom: 3px;
+    border-bottom: 1px solid black;
+    margin-left: 65px;
+}
+
+.reply-box {
+    background-color: #252525;
+    margin-top: 5px;
+}
+
+.reply-contnet-box {
+    width: auto;
+    margin-left: 80px;
+    min-height: 80px;
+    padding: 0 15px 0 5px;
+    background-color: #181818;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.micro-forum {
+    padding-left: 30px;
+    margin-top: 10px;
+    padding-right: 20px;
+    width: 100%;
+    height: auto;
+    /* force text to wrap around */
+    word-break: break-word;
+}
+
+textarea {
+    background-color: #252525;
+    color: ghostwhite;
+}
+
+.notepad-toolbox {
+    display: block;
+    height: 100%;
+    min-width: 230px;
+    background-color: #131313;
+    overflow-y: hidden;
+    /* quick fix ads */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body {
+    overflow-x: hidden;
+    /* quick fix ads */
+}
+
+.toolbox-stats {
+    color: lightgreen!important;
+    margin-top: 75px;
+}
+
+.notepad-test {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background: #131313;
+    /* adfix */
+    margin: 0;
+}
+
+.notepad-top {
+    display: block;
+    height: 30px;
+    width: 100%;
+    background-color: #131313;
+    margin-top: 5px;
+}
+
+#lua-sessions {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.big-pink-btn {
+    user-select: none;
+    color: white;
+    width: auto;
+    padding: 0px 25px;
+    height: 40px;
+    background-color: rgb(27, 27, 27);
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    line-height: 40px;
+    border-radius: 3px;
+    margin-top: 10px;
+    border: solid 1px rgb(41, 41, 41);
+    cursor: pointer;
+    transition-duration: 0.1s;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.big-pink-btn-light {
+    user-select: none;
+    color: white;
+    /* contrast 2.64 ! */
+    width: auto;
+    padding: 0px 25px;
+    height: 40px;
+    background-color: rgb(27, 27, 27);
+    border: solid 1px rgb(41, 41, 41);
+    color: ghostwhite;
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 17px;
+    line-height: 40px;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition-duration: 0.1s;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.big-pink-btn:hover {
+    background-color: rgb(41, 41, 41);
+}
+
+.big-pink-btn-light:hover {
+    background-color: rgb(41, 41, 41);
+}
+
+.content-landing {
+    display: flex;
+    flex-direction: column;
+    /* width 100%; */
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#home-landingpage {
+    display: none;
+    transition-duration: 1s;
+    height: auto;
+    white-space: normal;
+    /* !important to not stretch here!! */
+}
+
+.home-page-content {
+    animation: slidein;
+    animation-duration: 0.75s;
+    animation-iteration-count: 1;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.home-page-container {
+    max-width: 960px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#toolbox-download-btn {
+    position: absolute;
+    right: 0;
+    margin-right: 260px;
+    z-index: 1;
+    display: none;
+}
+
+.home-info {
+    display: block;
+    position: relative;
+    width: 90%;
+    /* add margin instead? */
+    height: 400px;
+}
+
+.home-info>h1 {
+    color: #00c0ff;
+    font-size: 44px;
+    line-height: 58px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.home-info>p {
+    margin-bottom: 2.5rem;
+    font-size: 1.15rem;
+    color: rgb(255, 255, 255);
+    line-height: 1.5;
+}
+
+.button-box {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    justify-content: center;
+}
+
+.button-box>div {
+    display: block!important;
+    margin: 0;
+    margin-right: 10px;
+    /* small gap */
+}
+
+.home-padding {
+    height: 240px;
+}
+
+.home-footer {
+    bottom: 0;
+    height: 280px;
+    width: 100%;
+    position: relative;
+    color: #ffffff;
+    z-index: -1;
+    justify-content: center;
+    align-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+
+/* TODO: give random text? */
+
+.home-ribbon {
+    width: 15.38em;
+    height: 1.54em;
+    line-height: 1.54em;
+    position: absolute;
+    overflow: hidden;
+    top: 3.23em;
+    left: -4.5em;
+    z-index: 42;
+    background: #00c0ff;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    transform: rotate(-45deg);
+    color: white;
+}
+
+.collapsible-header {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+#notepad-toolbox1 {
+    display: none;
+}
+
+#lua-top-mobile {
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.btn-desktop {
+    display: block;
+}
+
+
+/* add GlowEffect for UploadFile button? */
+
+@keyframes slidein {
+    0% {
+        opacity: 0;
+        margin-top: 40px;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .home-ribbon {
+        display: none;
+    }
+    .btn-desktop {
+        display: none;
+    }
+    .notepad-body {
+        flex-direction: column;
+    }
+    /* Make lines smaller on mobile */
+    .notepad-lines>ul {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .lasm-script {
+        font-size: 14px;
+        line-height: 16px;
+    }
+    /* text inside boxes */
+    .content-box-middle {
+        max-height: 350px;
+    }
+    .post-title {
+        font-size: 26px;
+        padding-right: 30px;
+    }
+    .flare-box {
+        font-size: 14px;
+    }
+    .notepad-toolbox {
+        width: 100%;
+        font-size: 20px;
+        line-height: 1.25;
+        box-shadow: 0px -4px 3px 1px black;
+        z-index: 1;
+        /* TODO: make collapsible? */
+        overflow-y: auto;
+    }
+    .toolbox-stats {
+        margin-top: 0px;
+    }
+    .toolbox-collapsible {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    .toolbox-button {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    #toolbox-download-btn {
+        margin-right: 20px;
+        top: 5px;
+    }
+    #lua-sessions {
+        display: none;
+    }
+    #lua-top-mobile {
+        display: block;
+    }
+    .money-block {
+        display: none;
+    }
+    .notepad-test {
+        max-height: 70%;
+    }
+    .notepad-top {
+        height: 45px;
+    }
+    /*
+	.notepad-lines {
+		margin-right: 0;
+		min-width: 0;
+		border-right: 0;
+	}
+	*/
+    .content-box-left {
+        position: absolute !important;
+        right: -5px;
+        top: -5px;
+        padding: 0 !important;
+    }
+    .content-box-left-2 {
+        display: none;
+        /* hide pic on mobile? */
+    }
+    [id^=reply-] {
+        padding-left: 10px;
+    }
+    .small-box-2 {
+        overflow: hidden;
+        padding-bottom: 3px;
+        border-bottom: 1px solid black;
+        margin-left: 10px;
+    }
+    .reply-contnet-box {
+        margin-left: 0;
+    }
+    .box-avatar {
+        filter: drop-shadow(2px 4px 6px black);
+    }
+    .big-pink-btn {
+        margin-right: 10px;
+    }
+    .home-footer {
+        position: unset;
+    }
+    .home-page-content {
+        padding-top: 1rem;
+        padding-bottom: 6rem;
+    }
+    .micro-forum {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .topic-box {
+        padding: 6px;
+    }
+    .content-box-right {
+        display: none;
+    }
+}
