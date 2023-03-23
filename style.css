@@ -41,7 +41,7 @@ h1 {
 .main-container {
     width: 100vw;
     height: 100vh;
-    background-color: #131313;
+    background: #131313;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
@@ -425,7 +425,7 @@ pre>span {
 }
 
 [class^="c_ref-"]:hover {
-    background-color: #ae81ff30!important;
+    background-color: #ae81ff30 !important;
 }
 
 [class^="c_ref-"] {
@@ -702,8 +702,6 @@ pre>span {
     line-height: 1.2;
 }
 
-.post-title-interactable {}
-
 .post-title-interactable:hover {
     text-decoration: underline;
 }
@@ -906,6 +904,7 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    background: none;
 }
 
 .home-page-container {
@@ -1032,6 +1031,9 @@ body {
 }
 
 
+/*btn colors*/
+
+
 /* add GlowEffect for UploadFile button? */
 
 @keyframes slidein {
@@ -1110,9 +1112,6 @@ body {
     }
     .money-block {
         display: none;
-    }
-    .notepad-test {
-        max-height: 70%;
     }
     .notepad-top {
         height: 45px;
